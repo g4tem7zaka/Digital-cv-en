@@ -28,7 +28,7 @@ SOCIAL_MEDIA = {
     "Digital CV - French Version": "https://zakaria-temouch-fr.onrender.com",
 }
 
-st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
+st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON, layout="wide", initial_sidebar_state="expanded",)
 
 
 # --- LOAD CSS, PDF & PROFIL PIC ---
@@ -40,7 +40,14 @@ profile_pic = Image.open(profile_pic)
 
 
 # --- HERO SECTION ---
-col1, col2 = st.columns(2, gap="small")
+st.markdown("""
+    <style>
+    .stColumn {
+        margin-right: 5px; 
+    </style>
+""", unsafe_allow_html=True)
+
+col1, col2 = st.columns(2)
 with col1:
     st.write('\n')
     st.write('\n')
@@ -58,6 +65,8 @@ with col2:
     )
     st.write("📫", EMAIL)
     st.write("☎", PHONE)
+    st.write('\n')
+    st.write('\n')
     
 
 # --- SOCIAL LINKS ---
